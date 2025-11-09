@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Chromebook Chat — Final</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div id="app">
+    <header class="topbar"><h1>Chromebook Chat</h1></header>
+    <main class="main-grid">
+      <section id="auth" class="card auth-panel">
+        <h2>Sign up</h2>
+        <input id="reg-username" placeholder="username" /><input id="reg-password" placeholder="password" type="password" />
+        <button id="btn-register">Create account</button>
+        <div id="reg-msg" class="msg"></div>
+        <hr />
+        <h2>Sign in</h2>
+        <input id="login-username" placeholder="username" /><input id="login-password" placeholder="password" type="password" />
+        <button id="btn-login">Sign in</button>
+        <div id="login-msg" class="msg"></div>
+      </section>
+
+      <aside id="dashboard" class="card hidden">
+        <div id="profile"></div>
+        <div><h3>Friends</h3><ul id="friends-list" class="list"></ul>
+        <input id="friend-code" placeholder="Friend code" /><button id="btn-add-friend">Add Friend</button></div>
+        <div><h3>Online friends</h3><ul id="online-list" class="list"></ul></div>
+        <div><h3>DMs</h3><ul id="dms-list" class="list"></ul></div>
+        <div><h3>Groups</h3><ul id="groups-list" class="list"></ul>
+        <input id="new-group-name" placeholder="New group name" /><button id="btn-create-group">Create Group</button>
+        <input id="join-group-code" placeholder="Join group code" /><button id="btn-join-group">Join Group</button></div>
+        <div style="margin-top:10px;">
+          <label>Avatar: <input id="avatar-file" type="file" accept="image/*" /></label><button id="btn-upload-avatar">Upload</button>
+        </div>
+        <button id="btn-logout" class="danger">Logout</button>
+      </aside>
+
+      <section id="chat-area" class="card hidden">
+        <h2 id="chat-title">Select a conversation</h2>
+        <div id="messages" class="messages"></div>
+        <div class="send"><input id="message-input" placeholder="Message..." /><button id="btn-send">Send</button></div>
+        <div id="call-ui"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/main.js"></script>
+</body>
+</html>
